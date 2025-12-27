@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'Bridging the gap between digital AI and physical robots',
-  url: 'https://physical-ai-course.github.io',
-  baseUrl: '/',
+  url: 'https://muhammadsaadullah.github.io',
+  baseUrl: '/AI-Spec-Driven-Hackathon-I/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
