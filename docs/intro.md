@@ -28,10 +28,10 @@ By the end of this course, you will be able to:
 
 The course is organized into four main modules:
 
-1. **[The Robotic Nervous System (ROS 2)](/docs/modules/ros2)** - Middleware for robot control
-2. **[The Digital Twin (Gazebo & Unity)](/docs/modules/gazebo-unity)** - Physics simulation and environment building
-3. **[The AI-Robot Brain (NVIDIA Isaac™)](/docs/modules/nvidia-isaac)** - Advanced perception and training
-4. **[Vision-Language-Action (VLA)](/docs/modules/vla)** - Convergence of LLMs and Robotics
+1. **[The Robotic Nervous System (ROS 2)](/docs/modules/ros2/)** - Middleware for robot control
+2. **[The Digital Twin (Gazebo & Unity)](/docs/modules/gazebo-unity/)** - Physics simulation and environment building
+3. **[The AI-Robot Brain (NVIDIA Isaac™)](/docs/modules/nvidia-isaac/)** - Advanced perception and training
+4. **[Vision-Language-Action (VLA)](/docs/modules/vla/)** - Convergence of LLMs and Robotics
 
 ## Weekly Breakdown
 
@@ -41,7 +41,7 @@ The course follows a 13-week schedule with progressive learning from foundationa
 - **Weeks 3-5**: [ROS 2 Fundamentals](/docs/weekly-breakdown/weeks-3-5-ros2-fundamentals)
 - **Weeks 6-7**: [Robot Simulation with Gazebo](/docs/weekly-breakdown/weeks-6-7-gazebo-simulation)
 - **Weeks 8-10**: [NVIDIA Isaac Platform](/docs/weekly-breakdown/weeks-8-10-nvidia-isaac)
-- **Weeks 11-12**: [Humanoid Robot Development](/docs/weekly-breakdown/weeks-11-12-humanoid-dev)
+- **Weeks 11-12**: [Humanoid Robot Development](/docs/weekly-breakdown/weeks-11-12-humanoid-development)
 - **Week 13**: [Conversational Robotics](/docs/weekly-breakdown/week-13-conversational-robotics)
 
 ## Getting Started

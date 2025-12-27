@@ -24,7 +24,7 @@ Focus: Physics simulation and environment building.
 
 - [Gazebo simulation environment setup](/docs/modules/gazebo-unity/simulation-setup)
 - [Simulating physics, gravity, and collisions in Gazebo](/docs/modules/gazebo-unity/physics-collision)
-- [High-fidelity rendering and human-robot interaction in Unity](/docs/modules/gazebo-unity)
+- [High-fidelity rendering and human-robot interaction in Unity](/docs/modules/gazebo-unity/)
 - [Simulating sensors: LiDAR, Depth Cameras, and IMUs](/docs/modules/gazebo-unity/sensors-simulation)
 
 ## Module 3: The AI-Robot Brain (NVIDIA Isaac™)
