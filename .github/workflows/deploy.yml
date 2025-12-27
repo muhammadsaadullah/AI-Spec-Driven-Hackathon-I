@@ -19,11 +19,8 @@
           run: npm install
           working-directory: docs
         - name: Build website
-          run: |
-            cd docs
-            npm run build
-          env:
-            NODE_ENV: production
+          run: npm run build
+          working-directory: docs
         - name: Deploy to GitHub Pages
           uses: peaceiris/actions-gh-pages@v3
           with:

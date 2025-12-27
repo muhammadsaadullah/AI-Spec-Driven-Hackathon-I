@@ -11,8 +11,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'physical-ai-course', // Usually your GitHub org/user name.
-  projectName: 'book', // Usually your repo name.
+  organizationName: 'muhammadsaadullah', // Your GitHub username
+  projectName: 'AI-Spec-Driven-Hackathon-I', // Your repository name
 
   presets: [
     [
@@ -78,7 +78,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             label: 'Reference',
           },
           {
-            href: 'https://github.com/physical-ai-course/book',
+            href: 'https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I',
             label: 'GitHub',
             position: 'right',
           },
@@ -126,7 +126,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/physical-ai-course/book',
+                href: 'https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I',
               },
               {
                 label: 'NVIDIA Isaac',
