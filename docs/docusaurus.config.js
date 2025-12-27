@@ -96,11 +96,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               },
               {
                 label: 'ROS 2 Fundamentals',
-                to: '/docs/modules/ros2',
+                to: '/docs/modules/ros2/',
               },
               {
                 label: 'Gazebo Simulation',
-                to: '/docs/modules/gazebo-unity',
+                to: '/docs/modules/gazebo-unity/',
               },
             ],
           },
