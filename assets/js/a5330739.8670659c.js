@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs=globalThis.webpackChunkdocs||[]).push([[6244],{805(a){a.exports=JSON.parse('{"allTagsPath":"/AI-Spec-Driven-Hackathon-I/blog/tags","slug":"/AI-Spec-Driven-Hackathon-I/blog/tags/facebook","name":"facebook","count":1,"permalink":"/AI-Spec-Driven-Hackathon-I/blog/tags/facebook"}')}}]);
