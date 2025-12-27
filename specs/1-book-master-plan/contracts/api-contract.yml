@@ -1,0 +1,298 @@
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Course API
+  description: API for course content management and search functionality
+  version: 1.0.0
+servers:
+  - url: https://physical-ai-course.github.io/api
+    description: Production server
+  - url: http://localhost:3000/api
+    description: Development server
+
+paths:
+  /content:
+    get:
+      summary: Get all course content
+      description: Retrieve all course content organized by modules and weeks
+      parameters:
+        - name: module
+          in: query
+          description: Filter content by module (ros2, gazebo-unity, nvidia-isaac, vla)
+          required: false
+          schema:
+            type: string
+            enum: [ros2, gazebo-unity, nvidia-isaac, vla]
+        - name: week
+          in: query
+          description: Filter content by week (1-13)
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 13
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CourseContent'
+        '400':
+          description: Invalid parameters
+
+  /content/{id}:
+    get:
+      summary: Get specific content by ID
+      description: Retrieve a specific piece of course content by its ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Content ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseContent'
+        '404':
+          description: Content not found
+
+  /search:
+    get:
+      summary: Search course content
+      description: Search through course content with keywords
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Search query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of results to return
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResult'
+                  total:
+                    type: integer
+        '400':
+          description: Invalid search query
+
+  /hardware-requirements:
+    get:
+      summary: Get hardware requirements
+      description: Retrieve all hardware requirements organized by category
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  requirements:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/HardwareRequirement'
+
+  /assessments:
+    get:
+      summary: Get all assessments
+      description: Retrieve all course assessments with details
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  assessments:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Assessment'
+
+components:
+  schemas:
+    CourseContent:
+      type: object
+      required:
+        - id
+        - title
+        - content_type
+        - module
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the content piece
+        title:
+          type: string
+          description: Title of the content section
+        module:
+          type: string
+          description: Module category
+          enum: [ros2, gazebo-unity, nvidia-isaac, vla]
+        week:
+          type: integer
+          description: Week number in the 13-week schedule (if applicable)
+          minimum: 1
+          maximum: 13
+        content_type:
+          type: string
+          description: Type of content
+          enum: [lesson, tutorial, reference, assessment]
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: List of required knowledge/skills
+        learning_objectives:
+          type: array
+          items:
+            type: string
+          description: List of measurable learning outcomes
+        duration:
+          type: integer
+          description: Estimated time to complete (in minutes)
+        difficulty:
+          type: string
+          description: Difficulty level
+          enum: [beginner, intermediate, advanced]
+        content:
+          type: string
+          description: Main content in Markdown format
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+
+    HardwareRequirement:
+      type: object
+      required:
+        - id
+        - name
+        - component_type
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the hardware component
+        component_type:
+          type: string
+          description: Type of component
+          enum: [workstation, edge_kit, sensor, robot]
+        name:
+          type: string
+          description: Name of the hardware component
+        model:
+          type: string
+          description: Specific model number
+        specifications:
+          type: object
+          description: Technical specifications
+        price:
+          type: number
+          description: Approximate price
+        notes:
+          type: string
+          description: Additional notes about the component
+        required_for:
+          type: array
+          items:
+            type: string
+          description: Which modules/weeks require this component
+        alternatives:
+          type: array
+          items:
+            type: string
+          description: Alternative components that can be used
+
+    Assessment:
+      type: object
+      required:
+        - id
+        - title
+        - type
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the assessment
+        title:
+          type: string
+          description: Title of the assessment
+        type:
+          type: string
+          description: Type of assessment
+          enum: [project, quiz, practical, capstone]
+        module:
+          type: string
+          description: Module the assessment belongs to
+        week:
+          type: integer
+          description: Week the assessment is due
+          minimum: 1
+          maximum: 13
+        objectives:
+          type: array
+          items:
+            type: string
+          description: Learning objectives being assessed
+        requirements:
+          type: string
+          description: Specific requirements for the assessment
+        evaluation_criteria:
+          type: string
+          description: Rubric for grading
+        submission_guidelines:
+          type: string
+          description: How to submit the assessment
+
+    SearchResult:
+      type: object
+      required:
+        - id
+        - title
+        - url
+        - score
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the result
+        title:
+          type: string
+          description: Title of the content
+        url:
+          type: string
+          description: URL to access the content
+        snippet:
+          type: string
+          description: Short preview of the content
+        score:
+          type: number
+          description: Relevance score
