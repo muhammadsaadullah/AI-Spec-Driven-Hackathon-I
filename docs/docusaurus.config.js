@@ -96,8 +96,9 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
             ],
           },
           {
-            type: 'search',
+            type: 'html',
             position: 'right',
+            value: '<div id="custom-search-container"></div>',
           },
           {
             href: 'https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I',
