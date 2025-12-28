@@ -26,6 +26,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: .
+
+      - name: Generate search index
+        run: npm run generate-search-index
+        working-directory: .
+
+      - name: Install docs dependencies
+        run: npm install
         working-directory: docs
 
       - name: Build website

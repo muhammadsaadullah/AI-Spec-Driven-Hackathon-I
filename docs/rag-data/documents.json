@@ -1,0 +1,715 @@
+[
+  {
+    "id": "doc_0",
+    "title": "Assessment Guidelines",
+    "source": "assessments\\index.md",
+    "url": "/docs/assessments/index",
+    "metadata": {
+      "title": "Assessment Guidelines",
+      "description": "Assessment criteria and guidelines for the Physical AI & Humanoid Robotics course",
+      "keywords": [
+        "assessment",
+        "criteria",
+        "grading",
+        "evaluation",
+        "robotics",
+        "ai"
+      ],
+      "sidebar_position": 1,
+      "path": "assessments/index",
+      "sourceFile": "docs\\assessments\\index.md",
+      "createdAt": "2025-12-27T17:20:34.324Z"
+    }
+  },
+  {
+    "id": "doc_1",
+    "title": "Hardware Requirements",
+    "source": "hardware-requirements.md",
+    "url": "/docs/hardware-requirements",
+    "metadata": {
+      "title": "Hardware Requirements",
+      "description": "Detailed hardware requirements for the Physical AI & Humanoid Robotics course including workstation, edge computing, and robot platforms",
+      "keywords": [
+        "hardware",
+        "requirements",
+        "robotics",
+        "nvidia",
+        "isaac",
+        "jetson",
+        "workstation"
+      ],
+      "sidebar_position": 7,
+      "path": "hardware-requirements",
+      "sourceFile": "docs\\hardware-requirements.md",
+      "createdAt": "2025-12-27T14:00:11.933Z"
+    }
+  },
+  {
+    "id": "doc_2",
+    "title": "Physical AI & Humanoid Robotics Course",
+    "source": "intro.md",
+    "url": "/docs/intro",
+    "metadata": {
+      "title": "Physical AI & Humanoid Robotics Course",
+      "description": "Bridging the gap between digital AI and physical robots",
+      "keywords": [
+        "physical ai",
+        "humanoid robotics",
+        "ros2",
+        "nvidia isaac"
+      ],
+      "sidebar_position": 1,
+      "path": "intro",
+      "sourceFile": "docs\\intro.md",
+      "createdAt": "2025-12-27T17:56:41.560Z"
+    }
+  },
+  {
+    "id": "doc_3",
+    "title": "Gazebo & Unity Simulation",
+    "source": "modules\\gazebo-unity\\index.md",
+    "url": "/docs/modules/gazebo-unity/index",
+    "metadata": {
+      "title": "Gazebo & Unity Simulation",
+      "description": "Gazebo simulation environment setup, physics simulation and sensor simulation, Unity for high-fidelity rendering",
+      "keywords": [
+        "gazebo",
+        "unity",
+        "simulation",
+        "physics",
+        "sensors",
+        "rendering"
+      ],
+      "sidebar_position": 2,
+      "path": "modules/gazebo-unity/index",
+      "sourceFile": "docs\\modules\\gazebo-unity\\index.md",
+      "createdAt": "2025-12-27T17:17:20.448Z"
+    }
+  },
+  {
+    "id": "doc_4",
+    "title": "Physics and Collision Simulation",
+    "source": "modules\\gazebo-unity\\physics-collision.md",
+    "url": "/docs/modules/gazebo-unity/physics-collision",
+    "metadata": {
+      "title": "Physics and Collision Simulation",
+      "description": "Advanced physics simulation and collision detection for humanoid robots in Gazebo",
+      "keywords": [
+        "physics",
+        "collision",
+        "gazebo",
+        "simulation",
+        "humanoid",
+        "robotics"
+      ],
+      "sidebar_position": 3,
+      "path": "modules/gazebo-unity/physics-collision",
+      "sourceFile": "docs\\modules\\gazebo-unity\\physics-collision.md",
+      "createdAt": "2025-12-27T12:30:58.135Z"
+    }
+  },
+  {
+    "id": "doc_5",
+    "title": "Sensor Simulation",
+    "source": "modules\\gazebo-unity\\sensors-simulation.md",
+    "url": "/docs/modules/gazebo-unity/sensors-simulation",
+    "metadata": {
+      "title": "Sensor Simulation",
+      "description": "Simulating realistic sensors for humanoid robots in Gazebo: LiDAR, cameras, IMUs, and more",
+      "keywords": [
+        "sensors",
+        "gazebo",
+        "simulation",
+        "lidar",
+        "camera",
+        "imu",
+        "humanoid",
+        "robotics"
+      ],
+      "sidebar_position": 4,
+      "path": "modules/gazebo-unity/sensors-simulation",
+      "sourceFile": "docs\\modules\\gazebo-unity\\sensors-simulation.md",
+      "createdAt": "2025-12-27T12:34:31.151Z"
+    }
+  },
+  {
+    "id": "doc_6",
+    "title": "Gazebo Simulation Setup",
+    "source": "modules\\gazebo-unity\\simulation-setup.md",
+    "url": "/docs/modules/gazebo-unity/simulation-setup",
+    "metadata": {
+      "title": "Gazebo Simulation Setup",
+      "description": "Setting up Gazebo for humanoid robot simulation and physics-based environments",
+      "keywords": [
+        "gazebo",
+        "simulation",
+        "physics",
+        "robotics",
+        "humanoid",
+        "ros2"
+      ],
+      "sidebar_position": 2,
+      "path": "modules/gazebo-unity/simulation-setup",
+      "sourceFile": "docs\\modules\\gazebo-unity\\simulation-setup.md",
+      "createdAt": "2025-12-27T12:28:38.846Z"
+    }
+  },
+  {
+    "id": "doc_7",
+    "title": "Course Modules",
+    "source": "modules\\index.md",
+    "url": "/docs/modules/index",
+    "metadata": {
+      "title": "Course Modules",
+      "description": "Overview of the four main modules in the Physical AI & Humanoid Robotics course",
+      "keywords": [
+        "physical ai",
+        "modules",
+        "curriculum",
+        "robotics"
+      ],
+      "sidebar_position": 1,
+      "path": "modules/index",
+      "sourceFile": "docs\\modules\\index.md",
+      "createdAt": "2025-12-27T17:23:16.240Z"
+    }
+  },
+  {
+    "id": "doc_8",
+    "title": "NVIDIA Isaac Platform",
+    "source": "modules\\nvidia-isaac\\index.md",
+    "url": "/docs/modules/nvidia-isaac/index",
+    "metadata": {
+      "title": "NVIDIA Isaac Platform",
+      "description": "NVIDIA Isaac SDK and Isaac Sim, AI-powered perception and manipulation, sim-to-real transfer techniques",
+      "keywords": [
+        "nvidia",
+        "isaac",
+        "ai",
+        "perception",
+        "reinforcement learning",
+        "sim-to-real"
+      ],
+      "sidebar_position": 3,
+      "path": "modules/nvidia-isaac/index",
+      "sourceFile": "docs\\modules\\nvidia-isaac\\index.md",
+      "createdAt": "2025-12-27T17:17:39.743Z"
+    }
+  },
+  {
+    "id": "doc_9",
+    "title": "NVIDIA Isaac Sim Basics",
+    "source": "modules\\nvidia-isaac\\isaac-sim.md",
+    "url": "/docs/modules/nvidia-isaac/isaac-sim",
+    "metadata": {
+      "title": "NVIDIA Isaac Sim Basics",
+      "description": "Introduction to NVIDIA Isaac Sim for photorealistic simulation and synthetic data generation",
+      "keywords": [
+        "nvidia",
+        "isaac sim",
+        "simulation",
+        "photorealistic",
+        "synthetic data",
+        "humanoid",
+        "robotics"
+      ],
+      "sidebar_position": 2,
+      "path": "modules/nvidia-isaac/isaac-sim",
+      "sourceFile": "docs\\modules\\nvidia-isaac\\isaac-sim.md",
+      "createdAt": "2025-12-27T12:37:22.335Z"
+    }
+  },
+  {
+    "id": "doc_10",
+    "title": "Nav2 Path Planning for Humanoids",
+    "source": "modules\\nvidia-isaac\\nav2-path-planning.md",
+    "url": "/docs/modules/nvidia-isaac/nav2-path-planning",
+    "metadata": {
+      "title": "Nav2 Path Planning for Humanoids",
+      "description": "Path planning for bipedal humanoid movement using Nav2 with Isaac Sim integration",
+      "keywords": [
+        "nav2",
+        "path planning",
+        "humanoid",
+        "navigation",
+        "isaac",
+        "robotics",
+        "bipedal"
+      ],
+      "sidebar_position": 4,
+      "path": "modules/nvidia-isaac/nav2-path-planning",
+      "sourceFile": "docs\\modules\\nvidia-isaac\\nav2-path-planning.md",
+      "createdAt": "2025-12-27T13:05:25.233Z"
+    }
+  },
+  {
+    "id": "doc_11",
+    "title": "VSLAM Navigation",
+    "source": "modules\\nvidia-isaac\\vsalm-navigation.md",
+    "url": "/docs/modules/nvidia-isaac/vsalm-navigation",
+    "metadata": {
+      "title": "VSLAM Navigation",
+      "description": "Hardware-accelerated Visual SLAM and navigation for humanoid robots using NVIDIA Isaac",
+      "keywords": [
+        "vslam",
+        "navigation",
+        "isaac",
+        "visual slam",
+        "humanoid",
+        "robotics",
+        "nvidia"
+      ],
+      "sidebar_position": 3,
+      "path": "modules/nvidia-isaac/vsalm-navigation",
+      "sourceFile": "docs\\modules\\nvidia-isaac\\vsalm-navigation.md",
+      "createdAt": "2025-12-27T13:02:35.610Z"
+    }
+  },
+  {
+    "id": "doc_12",
+    "title": "ROS 2 Fundamentals",
+    "source": "modules\\ros2\\fundamentals.md",
+    "url": "/docs/modules/ros2/fundamentals",
+    "metadata": {
+      "title": "ROS 2 Fundamentals",
+      "description": "Learn the fundamentals of ROS 2 architecture, core concepts, and development practices",
+      "keywords": [
+        "ros2",
+        "robotics",
+        "middleware",
+        "nodes",
+        "topics"
+      ],
+      "sidebar_position": 2,
+      "path": "modules/ros2/fundamentals",
+      "sourceFile": "docs\\modules\\ros2\\fundamentals.md",
+      "createdAt": "2025-12-27T12:23:49.766Z"
+    }
+  },
+  {
+    "id": "doc_13",
+    "title": "ROS 2 Fundamentals",
+    "source": "modules\\ros2\\index.md",
+    "url": "/docs/modules/ros2/index",
+    "metadata": {
+      "title": "ROS 2 Fundamentals",
+      "description": "ROS 2 architecture, core concepts, packages, launch files, and parameter management for humanoid robotics",
+      "keywords": [
+        "ros2",
+        "robotics",
+        "middleware",
+        "nodes",
+        "topics",
+        "services",
+        "humanoid"
+      ],
+      "sidebar_position": 1,
+      "path": "modules/ros2/index",
+      "sourceFile": "docs\\modules\\ros2\\index.md",
+      "createdAt": "2025-12-27T17:16:22.431Z"
+    }
+  },
+  {
+    "id": "doc_14",
+    "title": "ROS 2 Nodes, Topics, and Services",
+    "source": "modules\\ros2\\nodes-topics-services.md",
+    "url": "/docs/modules/ros2/nodes-topics-services",
+    "metadata": {
+      "title": "ROS 2 Nodes, Topics, and Services",
+      "description": "Deep dive into ROS 2 communication mechanisms: nodes, topics, and services",
+      "keywords": [
+        "ros2",
+        "nodes",
+        "topics",
+        "services",
+        "communication",
+        "middleware"
+      ],
+      "sidebar_position": 3,
+      "path": "modules/ros2/nodes-topics-services",
+      "sourceFile": "docs\\modules\\ros2\\nodes-topics-services.md",
+      "createdAt": "2025-12-27T12:24:51.429Z"
+    }
+  },
+  {
+    "id": "doc_15",
+    "title": "URDF for Humanoids",
+    "source": "modules\\ros2\\urdf-humanoids.md",
+    "url": "/docs/modules/ros2/urdf-humanoids",
+    "metadata": {
+      "title": "URDF for Humanoids",
+      "description": "Understanding and creating URDF files for humanoid robots in ROS 2",
+      "keywords": [
+        "urdf",
+        "humanoid",
+        "robot description",
+        "ros2",
+        "kinematics",
+        "robotics"
+      ],
+      "sidebar_position": 4,
+      "path": "modules/ros2/urdf-humanoids",
+      "sourceFile": "docs\\modules\\ros2\\urdf-humanoids.md",
+      "createdAt": "2025-12-27T12:25:43.798Z"
+    }
+  },
+  {
+    "id": "doc_16",
+    "title": "Capstone Project: Autonomous Humanoid",
+    "source": "modules\\vla\\capstone-project.md",
+    "url": "/docs/modules/vla/capstone-project",
+    "metadata": {
+      "title": "Capstone Project: Autonomous Humanoid",
+      "description": "The culminating project integrating all course concepts in an autonomous humanoid robot",
+      "keywords": [
+        "capstone",
+        "project",
+        "humanoid",
+        "autonomous",
+        "integration",
+        "robotics"
+      ],
+      "sidebar_position": 3,
+      "path": "modules/vla/capstone-project",
+      "sourceFile": "docs\\modules\\vla\\capstone-project.md",
+      "createdAt": "2025-12-27T17:28:05.982Z"
+    }
+  },
+  {
+    "id": "doc_17",
+    "title": "Cognitive Planning with LLMs",
+    "source": "modules\\vla\\cognitive-planning.md",
+    "url": "/docs/modules/vla/cognitive-planning",
+    "metadata": {
+      "title": "Cognitive Planning with LLMs",
+      "description": "Using LLMs to translate natural language into ROS 2 actions",
+      "keywords": [
+        "llm",
+        "cognitive planning",
+        "nlp",
+        "ros2",
+        "ai planning",
+        "robotics"
+      ],
+      "sidebar_position": 2,
+      "path": "modules/vla/cognitive-planning",
+      "sourceFile": "docs\\modules\\vla\\cognitive-planning.md",
+      "createdAt": "2025-12-27T17:26:50.097Z"
+    }
+  },
+  {
+    "id": "doc_18",
+    "title": "Vision-Language-Action (VLA)",
+    "source": "modules\\vla\\index.md",
+    "url": "/docs/modules/vla/index",
+    "metadata": {
+      "title": "Vision-Language-Action (VLA)",
+      "description": "The convergence of LLMs and robotics, voice-to-action systems, cognitive planning with LLMs",
+      "keywords": [
+        "vla",
+        "llm",
+        "vision",
+        "language",
+        "action",
+        "conversational ai"
+      ],
+      "sidebar_position": 4,
+      "path": "modules/vla/index",
+      "sourceFile": "docs\\modules\\vla\\index.md",
+      "createdAt": "2025-12-27T17:18:02.749Z"
+    }
+  },
+  {
+    "id": "doc_19",
+    "title": "Voice-to-Action Systems",
+    "source": "modules\\vla\\voice-to-action.md",
+    "url": "/docs/modules/vla/voice-to-action",
+    "metadata": {
+      "title": "Voice-to-Action Systems",
+      "description": "Using OpenAI Whisper for voice commands in robotics applications",
+      "keywords": [
+        "voice",
+        "whisper",
+        "action",
+        "robotics",
+        "speech recognition",
+        "nlp"
+      ],
+      "sidebar_position": 1,
+      "path": "modules/vla/voice-to-action",
+      "sourceFile": "docs\\modules\\vla\\voice-to-action.md",
+      "createdAt": "2025-12-27T17:26:33.509Z"
+    }
+  },
+  {
+    "id": "doc_20",
+    "title": "Glossary",
+    "source": "reference\\glossary.md",
+    "url": "/docs/reference/glossary",
+    "metadata": {
+      "title": "Glossary",
+      "description": "Glossary of terms for the Physical AI & Humanoid Robotics course",
+      "keywords": [
+        "glossary",
+        "terminology",
+        "robotics",
+        "ai",
+        "definitions"
+      ],
+      "sidebar_position": 1,
+      "path": "reference/glossary",
+      "sourceFile": "docs\\reference\\glossary.md",
+      "createdAt": "2025-12-27T17:19:38.107Z"
+    }
+  },
+  {
+    "id": "doc_21",
+    "title": "Notation Guide",
+    "source": "reference\\notation.md",
+    "url": "/docs/reference/notation",
+    "metadata": {
+      "title": "Notation Guide",
+      "description": "Notation guide for the Physical AI & Humanoid Robotics course",
+      "keywords": [
+        "notation",
+        "mathematical notation",
+        "robotics",
+        "symbols",
+        "conventions"
+      ],
+      "sidebar_position": 2,
+      "path": "reference/notation",
+      "sourceFile": "docs\\reference\\notation.md",
+      "createdAt": "2025-12-27T17:20:09.047Z"
+    }
+  },
+  {
+    "id": "doc_22",
+    "title": "Untitled",
+    "source": "tutorial-basics\\congratulations.md",
+    "url": "/docs/tutorial-basics/congratulations",
+    "metadata": {
+      "sidebar_position": 6,
+      "path": "tutorial-basics/congratulations",
+      "sourceFile": "docs\\tutorial-basics\\congratulations.md",
+      "createdAt": "2025-12-27T12:14:03.862Z"
+    }
+  },
+  {
+    "id": "doc_23",
+    "title": "Untitled",
+    "source": "tutorial-basics\\create-a-blog-post.md",
+    "url": "/docs/tutorial-basics/create-a-blog-post",
+    "metadata": {
+      "sidebar_position": 3,
+      "path": "tutorial-basics/create-a-blog-post",
+      "sourceFile": "docs\\tutorial-basics\\create-a-blog-post.md",
+      "createdAt": "2025-12-27T12:14:04.040Z"
+    }
+  },
+  {
+    "id": "doc_24",
+    "title": "Untitled",
+    "source": "tutorial-basics\\create-a-document.md",
+    "url": "/docs/tutorial-basics/create-a-document",
+    "metadata": {
+      "sidebar_position": 2,
+      "path": "tutorial-basics/create-a-document",
+      "sourceFile": "docs\\tutorial-basics\\create-a-document.md",
+      "createdAt": "2025-12-27T12:14:04.042Z"
+    }
+  },
+  {
+    "id": "doc_25",
+    "title": "Untitled",
+    "source": "tutorial-basics\\create-a-page.md",
+    "url": "/docs/tutorial-basics/create-a-page",
+    "metadata": {
+      "sidebar_position": 1,
+      "path": "tutorial-basics/create-a-page",
+      "sourceFile": "docs\\tutorial-basics\\create-a-page.md",
+      "createdAt": "2025-12-27T12:14:04.044Z"
+    }
+  },
+  {
+    "id": "doc_26",
+    "title": "Untitled",
+    "source": "tutorial-basics\\deploy-your-site.md",
+    "url": "/docs/tutorial-basics/deploy-your-site",
+    "metadata": {
+      "sidebar_position": 5,
+      "path": "tutorial-basics/deploy-your-site",
+      "sourceFile": "docs\\tutorial-basics\\deploy-your-site.md",
+      "createdAt": "2025-12-27T12:14:04.046Z"
+    }
+  },
+  {
+    "id": "doc_27",
+    "title": "Untitled",
+    "source": "tutorial-basics\\markdown-features.mdx",
+    "url": "/docs/tutorial-basics/markdown-featuresx",
+    "metadata": {
+      "sidebar_position": 4,
+      "path": "tutorial-basics/markdown-featuresx",
+      "sourceFile": "docs\\tutorial-basics\\markdown-features.mdx",
+      "createdAt": "2025-12-27T12:14:04.068Z"
+    }
+  },
+  {
+    "id": "doc_28",
+    "title": "Untitled",
+    "source": "tutorial-extras\\manage-docs-versions.md",
+    "url": "/docs/tutorial-extras/manage-docs-versions",
+    "metadata": {
+      "sidebar_position": 1,
+      "path": "tutorial-extras/manage-docs-versions",
+      "sourceFile": "docs\\tutorial-extras\\manage-docs-versions.md",
+      "createdAt": "2025-12-27T12:14:04.053Z"
+    }
+  },
+  {
+    "id": "doc_29",
+    "title": "Untitled",
+    "source": "tutorial-extras\\translate-your-site.md",
+    "url": "/docs/tutorial-extras/translate-your-site",
+    "metadata": {
+      "sidebar_position": 2,
+      "path": "tutorial-extras/translate-your-site",
+      "sourceFile": "docs\\tutorial-extras\\translate-your-site.md",
+      "createdAt": "2025-12-27T12:14:04.065Z"
+    }
+  },
+  {
+    "id": "doc_30",
+    "title": "Week 13: Conversational Robotics",
+    "source": "weekly-breakdown\\week-13-conversational-robotics.md",
+    "url": "/docs/weekly-breakdown/week-13-conversational-robotics",
+    "metadata": {
+      "title": "Week 13: Conversational Robotics",
+      "description": "Integrating GPT models for conversational AI in robots, speech recognition and natural language understanding, multi-modal interaction: speech, gesture, vision",
+      "keywords": [
+        "conversational ai",
+        "gpt",
+        "nlp",
+        "speech recognition",
+        "multimodal",
+        "human-robot interaction"
+      ],
+      "sidebar_position": 6,
+      "path": "weekly-breakdown/week-13-conversational-robotics",
+      "sourceFile": "docs\\weekly-breakdown\\week-13-conversational-robotics.md",
+      "createdAt": "2025-12-27T13:56:30.240Z"
+    }
+  },
+  {
+    "id": "doc_31",
+    "title": "Weeks 1-2: Introduction to Physical AI",
+    "source": "weekly-breakdown\\weeks-1-2-intro-physical-ai.md",
+    "url": "/docs/weekly-breakdown/weeks-1-2-intro-physical-ai",
+    "metadata": {
+      "title": "Weeks 1-2: Introduction to Physical AI",
+      "description": "Foundations of Physical AI and embodied intelligence, from digital AI to robots that understand physical laws",
+      "keywords": [
+        "physical ai",
+        "embodied intelligence",
+        "foundations",
+        "robotics",
+        "ai"
+      ],
+      "sidebar_position": 1,
+      "path": "weekly-breakdown/weeks-1-2-intro-physical-ai",
+      "sourceFile": "docs\\weekly-breakdown\\weeks-1-2-intro-physical-ai.md",
+      "createdAt": "2025-12-27T13:17:01.585Z"
+    }
+  },
+  {
+    "id": "doc_32",
+    "title": "Weeks 11-12: Humanoid Robot Development",
+    "source": "weekly-breakdown\\weeks-11-12-humanoid-development.md",
+    "url": "/docs/weekly-breakdown/weeks-11-12-humanoid-development",
+    "metadata": {
+      "title": "Weeks 11-12: Humanoid Robot Development",
+      "description": "Humanoid robot kinematics and dynamics, bipedal locomotion and balance control, manipulation and grasping with humanoid hands, natural human-robot interaction design",
+      "keywords": [
+        "humanoid",
+        "kinematics",
+        "dynamics",
+        "locomotion",
+        "balance",
+        "manipulation",
+        "interaction"
+      ],
+      "sidebar_position": 5,
+      "path": "weekly-breakdown/weeks-11-12-humanoid-development",
+      "sourceFile": "docs\\weekly-breakdown\\weeks-11-12-humanoid-development.md",
+      "createdAt": "2025-12-27T13:51:47.181Z"
+    }
+  },
+  {
+    "id": "doc_33",
+    "title": "Weeks 3-5: ROS 2 Fundamentals",
+    "source": "weekly-breakdown\\weeks-3-5-ros2-fundamentals.md",
+    "url": "/docs/weekly-breakdown/weeks-3-5-ros2-fundamentals",
+    "metadata": {
+      "title": "Weeks 3-5: ROS 2 Fundamentals",
+      "description": "ROS 2 architecture, core concepts, packages, launch files, and parameter management for humanoid robotics",
+      "keywords": [
+        "ros2",
+        "robotics",
+        "middleware",
+        "nodes",
+        "topics",
+        "services",
+        "humanoid"
+      ],
+      "sidebar_position": 2,
+      "path": "weekly-breakdown/weeks-3-5-ros2-fundamentals",
+      "sourceFile": "docs\\weekly-breakdown\\weeks-3-5-ros2-fundamentals.md",
+      "createdAt": "2025-12-27T13:35:58.075Z"
+    }
+  },
+  {
+    "id": "doc_34",
+    "title": "Weeks 6-7: Robot Simulation with Gazebo",
+    "source": "weekly-breakdown\\weeks-6-7-gazebo-simulation.md",
+    "url": "/docs/weekly-breakdown/weeks-6-7-gazebo-simulation",
+    "metadata": {
+      "title": "Weeks 6-7: Robot Simulation with Gazebo",
+      "description": "Gazebo simulation environment setup, URDF and SDF robot description formats, physics simulation and sensor simulation",
+      "keywords": [
+        "gazebo",
+        "simulation",
+        "urdf",
+        "sdf",
+        "physics",
+        "sensors"
+      ],
+      "sidebar_position": 3,
+      "path": "weekly-breakdown/weeks-6-7-gazebo-simulation",
+      "sourceFile": "docs\\weekly-breakdown\\weeks-6-7-gazebo-simulation.md",
+      "createdAt": "2025-12-27T13:41:42.161Z"
+    }
+  },
+  {
+    "id": "doc_35",
+    "title": "Weeks 8-10: NVIDIA Isaac Platform",
+    "source": "weekly-breakdown\\weeks-8-10-nvidia-isaac.md",
+    "url": "/docs/weekly-breakdown/weeks-8-10-nvidia-isaac",
+    "metadata": {
+      "title": "Weeks 8-10: NVIDIA Isaac Platform",
+      "description": "NVIDIA Isaac SDK and Isaac Sim, AI-powered perception and manipulation, reinforcement learning for robot control, sim-to-real transfer techniques",
+      "keywords": [
+        "nvidia",
+        "isaac",
+        "ai",
+        "perception",
+        "reinforcement learning",
+        "sim-to-real"
+      ],
+      "sidebar_position": 4,
+      "path": "weekly-breakdown/weeks-8-10-nvidia-isaac",
+      "sourceFile": "docs\\weekly-breakdown\\weeks-8-10-nvidia-isaac.md",
+      "createdAt": "2025-12-27T13:45:49.805Z"
+    }
+  }
+]

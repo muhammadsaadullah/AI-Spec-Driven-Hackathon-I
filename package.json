@@ -1,17 +1,43 @@
 {
-  "name": "book",
+  "name": "physical-ai-course",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Physical AI & Humanoid Robotics Course with integrated search functionality",
+  "main": "search-api.js",
   "scripts": {
+    "start": "node search-api.js",
+    "dev": "concurrently \"npm run search-api\" \"cd docs && npm start\"",
+    "search-api": "node search-api.js",
+    "docs:dev": "cd docs && npm start",
+    "docs:build": "cd docs && npm run build",
+    "generate-search-index": "node generate-static-search.js",
+    "test-search": "node test-search.js",
+    "prebuild": "npm run generate-search-index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "ai",
+    "robotics",
+    "education",
+    "docusaurus",
+    "search"
+  ],
+  "author": "Physical AI & Humanoid Robotics Course Team",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
   "devDependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
-    "@mdx-js/react": "^3.1.1"
-  }
+    "@mdx-js/react": "^3.1.1",
+    "concurrently": "^7.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I.git"
+  },
+  "bugs": {
+    "url": "https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I/issues"
+  },
+  "homepage": "https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I#readme"
 }

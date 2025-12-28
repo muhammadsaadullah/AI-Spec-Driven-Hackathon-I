@@ -1,5 +1,5 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer').themes.github;
+const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -40,6 +40,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        // Options for local search
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
         logo: {
@@ -54,28 +60,36 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             label: 'Home',
           },
           {
-            type: 'doc',
-            docId: 'modules/index',
+            type: 'dropdown',
+            label: 'Sections',
             position: 'left',
-            label: 'Modules',
+            items: [
+              {
+                type: 'doc',
+                docId: 'modules/index',
+                label: 'Modules',
+              },
+              {
+                type: 'doc',
+                docId: 'weekly-breakdown/weeks-1-2-intro-physical-ai',
+                label: 'Weekly Breakdown',
+              },
+              {
+                type: 'doc',
+                docId: 'assessments/index',
+                label: 'Assessments',
+              },
+              {
+                type: 'doc',
+                docId: 'reference/glossary',
+                label: 'Reference',
+              },
+            ],
           },
           {
-            type: 'doc',
-            docId: 'weekly-breakdown/weeks-1-2-intro-physical-ai',
-            position: 'left',
-            label: 'Weekly',
-          },
-          {
-            type: 'doc',
-            docId: 'assessments/index',
-            position: 'left',
-            label: 'Assessments',
-          },
-          {
-            type: 'doc',
-            docId: 'reference/glossary',
-            position: 'left',
-            label: 'Reference',
+            type: 'html',
+            position: 'right',
+            value: '<div id="custom-search-container"></div>',
           },
           {
             href: 'https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I',
