@@ -40,6 +40,9 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {"name": "algolia-site-verification", "content": "D383E01B8119E788"},
+      ],
       docs: {
         // Options for local search
         sidebar: {

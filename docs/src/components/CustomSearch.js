@@ -17,6 +17,9 @@ const CustomSearch = () => {
       return;
     }
 
+    // Show loading state
+    setResults([{ title: 'Searching...', url: '#', excerpt: 'Please wait...' }]);
+
     // First, try the API search (for development or when API is available)
     try {
       // Determine the API endpoint based on environment
@@ -26,12 +29,17 @@ const CustomSearch = () => {
         : `${window.location.protocol}//${window.location.hostname}:5000/search`;
 
       // Call the search API - using the API contract from api-contract.yml
-      const response = await fetch(`${apiEndpoint}?q=${encodeURIComponent(searchQuery)}&limit=10`);
+      const response = await fetch(`${apiEndpoint}?q=${encodeURIComponent(searchQuery)}&limit=10`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       if (response.ok) {
         const data = await response.json();
 
-        if (data.results) {
+        if (data.results && data.results.length > 0) {
           // Format results to match what the component expects
           const formattedResults = data.results.map(result => ({
             title: result.title,
@@ -41,13 +49,20 @@ const CustomSearch = () => {
 
           setResults(formattedResults);
           return; // Success with API search
+        } else {
+          // No results from API, continue to static search
+          setResults([]);
         }
+      } else {
+        // API returned error, continue to static search
+        setResults([]);
       }
     } catch (error) {
       console.log('API search failed, falling back to static search:', error.message);
+      // Continue to static search
     }
 
-    // If API search failed, use static client-side search
+    // If API search failed or no results, use static client-side search
     try {
       // Load the static search index
       const response = await fetch('/static-search-index.json');
@@ -67,20 +82,20 @@ const CustomSearch = () => {
         terms.forEach(term => {
           // Title matches are worth more
           if (titleLower.includes(term)) {
-            score += 10;
+            score += 15; // Increased weight for titles
           }
           // Content matches
           if (contentLower.includes(term)) {
             // Count occurrences for additional scoring
             const matches = (contentLower.match(new RegExp(term, 'g')) || []).length;
-            score += matches * 2;
+            score += matches * 3; // Increased weight for content matches
           }
 
           // Keyword matches
           if (entry.metadata?.keywords) {
             entry.metadata.keywords.forEach(keyword => {
               if (keyword.toLowerCase().includes(term)) {
-                score += 5;
+                score += 8; // Increased weight for keyword matches
               }
             });
           }
@@ -88,7 +103,7 @@ const CustomSearch = () => {
 
         // Boost if query appears in the first part of content
         if (contentLower.indexOf(searchTerm) >= 0 && contentLower.indexOf(searchTerm) < 200) {
-          score += 5;
+          score += 10; // Increased boost for early content matches
         }
 
         return {
@@ -107,7 +122,7 @@ const CustomSearch = () => {
       const formattedResults = results.map(result => ({
         title: result.title,
         url: result.url,
-        excerpt: result.content
+        excerpt: result.content.length > 200 ? result.content.substring(0, 200) + '...' : result.content
       }));
 
       setResults(formattedResults);
@@ -149,24 +164,34 @@ const CustomSearch = () => {
 
       {showResults && results.length > 0 && (
         <div className={styles.searchResults}>
-          {results.map((result, index) => (
-            <Link
-              key={index}
-              to={result.url}
-              className={styles.searchResultItem}
-              onClick={() => {
-                setShowResults(false);
-                setQuery('');
-              }}
-            >
-              <h4>{result.title}</h4>
-              <p>{result.excerpt}</p>
-            </Link>
-          ))}
+          {results.map((result, index) => {
+            // Check if this is the loading indicator
+            if (result.title === 'Searching...') {
+              return (
+                <div key={index} className={styles.loading}>
+                  <p>Searching...</p>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={index}
+                to={result.url}
+                className={styles.searchResultItem}
+                onClick={() => {
+                  setShowResults(false);
+                  setQuery('');
+                }}
+              >
+                <h4>{result.title}</h4>
+                <p>{result.excerpt}</p>
+              </Link>
+            );
+          })}
         </div>
       )}
 
-      {showResults && results.length === 0 && query && (
+      {showResults && results.length === 0 && query && results[0]?.title !== 'Searching...' && (
         <div className={styles.searchResults}>
           <p className={styles.noResults}>No results found for "{query}"</p>
         </div>
