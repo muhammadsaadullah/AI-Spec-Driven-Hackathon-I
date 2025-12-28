@@ -43,6 +43,12 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
       metadata: [
         {"name": "algolia-site-verification", "content": "D383E01B8119E788"},
       ],
+      scripts: [
+        {
+          src: '/search-injector.js',
+          async: true,
+        },
+      ],
       docs: {
         // Options for local search
         sidebar: {
@@ -90,9 +96,8 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
             ],
           },
           {
-            type: 'html',
+            type: 'search',
             position: 'right',
-            value: '<div id="custom-search-container"></div>',
           },
           {
             href: 'https://github.com/muhammadsaadullah/AI-Spec-Driven-Hackathon-I',
