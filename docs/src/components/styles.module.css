@@ -31,7 +31,7 @@
 }
 
 .searchButton {
-  background: #4f46e5;
+  background: #25c2a0; /* Match the site's primary color */
   color: white;
   border: none;
   border-radius: 0 6px 6px 0;
@@ -44,7 +44,7 @@
 }
 
 .searchButton:hover {
-  background: #4338ca;
+  background: #21af90; /* Darker shade of the primary color */
 }
 
 .searchResults {
@@ -83,7 +83,7 @@
 
 .searchResultItem h4 {
   margin: 0 0 6px 0;
-  color: #4f46e5;
+  color: #25c2a0; /* Match the site's primary color */
   font-size: 15px;
   font-weight: 600;
   line-height: 1.4;

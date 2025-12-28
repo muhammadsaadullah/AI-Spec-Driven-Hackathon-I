@@ -12,6 +12,7 @@
     "generate-search-index": "node generate-static-search.js",
     "test-search": "node test-search.js",
     "prebuild": "npm run generate-search-index",
+    "railway-start": "node search-api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -45,42 +45,42 @@ class SearchAPI {
       return [];
     }
 
+    const startTime = Date.now();
     const searchTerm = query.toLowerCase().trim();
     const terms = searchTerm.split(/\s+/);
 
-    // Calculate relevance score for each chunk
+    // Calculate relevance score for each chunk (optimized version)
     const scoredResults = this.chunks.map(chunk => {
       let score = 0;
       const contentLower = chunk.content.toLowerCase();
       const titleLower = chunk.title.toLowerCase();
 
-      // Score based on term matches in content and title
-      terms.forEach(term => {
+      // Score based on term matches in content and title (using faster loop)
+      for (const term of terms) {
         // Title matches are worth more
         if (titleLower.includes(term)) {
-          score += 10;
+          score += 15; // Increased weight for titles
         }
         // Content matches
         if (contentLower.includes(term)) {
           // Count occurrences for additional scoring
-          const matches = (contentLower.match(new RegExp(term, 'g')) || []).length;
-          score += matches * 2;
+          const matches = (contentLower.match(new RegExp(term, 'gi')) || []).length;
+          score += matches * 3; // Increased weight for content matches
         }
-      });
 
-      // Additional scoring factors
-      // Boost if query appears in the first part of content
-      if (contentLower.indexOf(searchTerm) >= 0 && contentLower.indexOf(searchTerm) < 200) {
-        score += 5;
+        // Check metadata keywords
+        if (chunk.metadata && chunk.metadata.keywords) {
+          for (const keyword of chunk.metadata.keywords) {
+            if (keyword.toLowerCase().includes(term)) {
+              score += 8; // Increased weight for keyword matches
+            }
+          }
+        }
       }
 
-      // Boost if query appears in metadata
-      if (chunk.metadata && chunk.metadata.keywords) {
-        chunk.metadata.keywords.forEach(keyword => {
-          if (keyword.toLowerCase().includes(searchTerm)) {
-            score += 5;
-          }
-        });
+      // Boost if query appears in the first part of content
+      if (contentLower.indexOf(searchTerm) >= 0 && contentLower.indexOf(searchTerm) < 200) {
+        score += 10; // Increased boost for early content matches
       }
 
       return {
@@ -99,6 +99,9 @@ class SearchAPI {
       .sort((a, b) => b.score - a.score)
       .slice(0, limit);
 
+    const endTime = Date.now();
+    console.log(`Search completed in ${endTime - startTime}ms for query: "${query}" - ${results.length} results found`);
+
     return results;
   }
 
@@ -106,7 +109,13 @@ class SearchAPI {
    * Get search results with proper formatting for the API contract
    */
   getSearchResults(query, limit = 10) {
+    const startTime = Date.now();
     const results = this.search(query, limit);
+    const endTime = Date.now();
+
+    // Log search query for analytics
+    console.log(`[SEARCH LOG] Query: "${query}", Results: ${results.length}, Time: ${endTime - startTime}ms, Timestamp: ${new Date().toISOString()}`);
+
     return {
       results: results,
       total: results.length
@@ -129,6 +138,9 @@ if (require.main === module) {
     const path = parsedUrl.pathname;
     const query = parsedUrl.query;
 
+    // Log incoming request
+    console.log(`[REQUEST] ${req.method} ${req.url} - ${new Date().toISOString()}`);
+
     // Set CORS headers for cross-origin requests
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -136,6 +148,7 @@ if (require.main === module) {
 
     // Handle preflight requests
     if (req.method === 'OPTIONS') {
+      console.log('[CORS] Preflight request handled');
       res.writeHead(200);
       res.end();
       return;
@@ -146,16 +159,23 @@ if (require.main === module) {
       const limit = parseInt(query.limit) || 10;
 
       if (!searchQuery) {
+        console.log('[ERROR] Missing query parameter "q"');
         res.writeHead(400, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Query parameter "q" is required' }));
         return;
       }
 
+      console.log(`[SEARCH] Processing query: "${searchQuery}", limit: ${limit}`);
+      const startTime = Date.now();
       const results = searchAPI.getSearchResults(searchQuery, limit);
+      const endTime = Date.now();
+
+      console.log(`[RESPONSE] Query: "${searchQuery}", Results: ${results.results.length}, Response time: ${endTime - startTime}ms`);
 
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(results));
     } else {
+      console.log(`[NOT FOUND] ${req.method} ${req.url}`);
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Endpoint not found' }));
     }
