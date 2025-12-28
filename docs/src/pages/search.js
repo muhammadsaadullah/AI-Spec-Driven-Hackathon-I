@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
+import ClientOnly from '@docusaurus/ClientOnly';
 import CustomSearch from '@site/src/components/CustomSearch';
 
 // Search page component that renders our custom search
@@ -10,7 +11,9 @@ function SearchPage() {
         <div className="row">
           <div className="col col--8 col--offset-2">
             <h1>Search Course Content</h1>
-            <CustomSearch />
+            <ClientOnly>
+              {() => <CustomSearch />}
+            </ClientOnly>
           </div>
         </div>
       </div>

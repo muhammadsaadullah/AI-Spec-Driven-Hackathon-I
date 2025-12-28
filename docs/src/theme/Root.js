@@ -1,22 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import { createRoot } from 'react-dom/client';
-import CustomSearch from '../components/CustomSearch';
+import React from 'react';
 
 // Root component to inject our custom search functionality
 const Root = ({ children }) => {
-  const searchContainerRef = useRef(null);
-  const searchRootRef = useRef(null);
-
-  useEffect(() => {
+  // SSR check - only run client-side code
+  if (typeof window !== 'undefined') {
+    // Client-side code only
     const initializeSearch = async () => {
       // Find the search container element
       const container = document.getElementById('custom-search-container');
 
-      if (container) {
-        // If there's an existing search root, unmount it
-        if (searchRootRef.current) {
-          searchRootRef.current.unmount();
-        }
+      if (container && !container.hasChildNodes()) {
+        // Dynamically import the CustomSearch component
+        const { default: CustomSearch } = await import('../components/CustomSearch');
 
         // Create a wrapper element for our search component
         const wrapper = document.createElement('div');
@@ -25,49 +20,28 @@ const Root = ({ children }) => {
         wrapper.style.minWidth = '200px'; // Ensure space for search
         container.appendChild(wrapper);
 
-        // Create React root and render the search component
-        const root = createRoot(wrapper);
-        root.render(<CustomSearch />);
+        // Use React DOM to render the component
+        const React = await import('react');
+        const ReactDOM = await import('react-dom/client');
 
-        // Store the root reference
-        searchRootRef.current = root;
-        searchContainerRef.current = container;
-      }
-    };
-
-    // Initialize search immediately
-    initializeSearch();
-
-    // Also set up a MutationObserver to handle page changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'childList') {
-          const container = document.getElementById('custom-search-container');
-          if (container && !searchRootRef.current) {
-            // Container was added, initialize search
-            initializeSearch();
-          }
+        if (ReactDOM.createRoot) {
+          const root = ReactDOM.createRoot(wrapper);
+          root.render(React.createElement(CustomSearch));
+        } else {
+          // Fallback for older versions
+          const ReactDOMLegacy = await import('react-dom');
+          ReactDOMLegacy.render(React.createElement(CustomSearch), wrapper);
         }
-      });
-    });
-
-    // Observe for changes to the DOM that might affect the search container
-    if (document.body) {
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
-    }
-
-    // Cleanup function
-    return () => {
-      if (searchRootRef.current) {
-        searchRootRef.current.unmount();
-        searchRootRef.current = null;
       }
-      observer.disconnect();
     };
-  }, []);
+
+    // Initialize search after DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeSearch);
+    } else {
+      initializeSearch();
+    }
+  }
 
   return <>{children}</>;
 };
