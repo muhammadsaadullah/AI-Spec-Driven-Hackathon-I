@@ -45,7 +45,7 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
       ],
       scripts: [
         {
-          src: '/search-injector.js',
+          src: '/search-loader.js',
           async: true,
         },
       ],
